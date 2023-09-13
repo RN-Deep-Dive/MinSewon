@@ -1,14 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import StateWithClassComponents from './StateWithClassComponents'
-import StateWithFunctionalComponents from './StateWithFunctionalComponents'
+// 시작 전 App.js 코드
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react"
+import { StyleSheet, Text, View, Button } from "react-native";
+import StateWithClassComponent from "./StateWithClassComponent";
+import StateWithFunctionalComponent from "./StateWithFunctionalComponent"
+import UseEffectWithClassComponent from "./UseEffectWithClassComponent";
+import UseEffectWithFunctionalComponent from "./UseEffectWithFunctionalComponent";
 
 export default function App() {
+  const [isTrue, setIsTrue] = useState(true);
   return (
     <View style={styles.container}>
-      {/* <StateWithClassComponents /> */}
-      <StateWithFunctionalComponents/>
-      
+      {/* <StateWithClassComponent /> */}
+      {/* <StateWithFuctionalComponent /> */}
+      {/* {isTrue ? < UseEffectWithClassComponent /> : null} */}
+      <UseEffectWithFunctionalComponent />
+
+      <Button title="toggle" onPress={() => setIsTrue(!isTrue)} />
     </View>
   );
 }
@@ -16,8 +24,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
