@@ -6,6 +6,7 @@ import StateWithClassComponent from "./StateWithClassComponent";
 import StateWithFunctionalComponent from "./StateWithFunctionalComponent"
 import UseEffectWithClassComponent from "./UseEffectWithClassComponent";
 import UseEffectWithFunctionalComponent from "./UseEffectWithFunctionalComponent";
+import CustomHook from "./CustomHook";
 
 export default function App() {
   const [isTrue, setIsTrue] = useState(true);
@@ -14,9 +15,9 @@ export default function App() {
       {/* <StateWithClassComponent /> */}
       {/* <StateWithFuctionalComponent /> */}
       {/* {isTrue ? < UseEffectWithClassComponent /> : null} */}
-      <UseEffectWithFunctionalComponent />
-
-      <Button title="toggle" onPress={() => setIsTrue(!isTrue)} />
+      {/* <UseEffectWithFunctionalComponent /> */}
+      {/* <Button title="toggle" onPress={() => setIsTrue(!isTrue)} /> */}
+      <CustomHook/>
     </View>
   );
 }
