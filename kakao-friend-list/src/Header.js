@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
-const IconButton =  (props) => {
+const IconButton =  ({ name }) => {
     return (
-        <View style={{ paddingHorizontal:6 }}>
-            <Ionicons name={props.name} size={24} color="black" />
-        </View>
+        <TouchableOpacity hitSlop={{ top:15, bottom: 15 }} style={{ paddingHorizontal:6}}>
+            <Ionicons name={name} size={24} color="black" />
+        </TouchableOpacity>
     );
 }
 
@@ -15,10 +15,10 @@ const Header = () => {
             <Text style={{ fontSize: 22, fontWeight: "bold" }}>친구</Text>
 
             <View style={{ flexDirection: "row" }}>
-                <IconButton name="ios-search-outline"/>
-                <IconButton name="ios-person-add-outline"/>
-                <IconButton name="ios-musical-notes-outline"/>
-                <IconButton name="ios-settings-outline"/>
+                <IconButton name="ios-search-outline" />
+                <IconButton name="ios-person-add-outline" />
+                <IconButton name="ios-musical-notes-outline" />
+                <IconButton name="ios-settings-outline" />
             </View>
         </View>
     );
